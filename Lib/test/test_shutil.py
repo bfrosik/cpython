@@ -1363,6 +1363,8 @@ class TestShutil(unittest.TestCase):
         check_chown(dirname, gid=gid)
 
         user = pwd.getpwuid(uid)[0]
+        print ('user, uid', user, uid)
+        print ('gid', gid)
         group = grp.getgrgid(gid)[0]
         shutil.chown(filename, user, group)
         check_chown(filename, uid, gid)
